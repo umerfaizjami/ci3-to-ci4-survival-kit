@@ -1,60 +1,47 @@
-# 🛠️ CI3 to CI4 Survival Kit
+# 🚀 CodeIgniter 3 to 4 Migration Survival Kit
 
-> **Stop staring at your legacy CodeIgniter 3 codebase in despair. Start migrating with confidence.**
+Welcome to the **CI3 to CI4 Survival Kit**! 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![CI Version](https://img.shields.io/badge/CodeIgniter_3_%E2%86%92_4-migration-orange.svg)](#)
+If you are reading this, you are probably facing the daunting task of upgrading a legacy CodeIgniter 3 application to the modern, robust CodeIgniter 4. You are not alone. The CI3 to CI4 jump is not just a version bump; it is a complete architectural shift (hello, namespaces and PSR-4!).
 
----
-
-## 😰 The Problem
-
-CodeIgniter 3 served us well — but it has reached end-of-life. CodeIgniter 4 is a **complete rewrite**: new folder structure, new namespace conventions, a revamped ORM, middleware instead of hooks, PSR-4 autoloading, and an entirely different approach to almost everything.
-
-**There is no automated upgrade path. The official migration guide is minimal. And your 200,000-line CI3 monolith isn't going to refactor itself.**
-
-If you've ever found yourself:
-
-- 🔍 Searching *"CI3 equivalent in CI4"* for the hundredth time
-- 😤 Debugging why `$this->load->model()` doesn't exist anymore
-- 🤯 Trying to remember whether it's `$this->input->post()` or `$this->request->getPost()`
-- 📁 Staring at CI4's folder structure wondering where your code is supposed to live
-- ⏳ Estimating a migration timeline for your team and having *no idea* where to start
-
-**This repo is for you.**
+This repository was built to cut through the frustration. It is a community-driven collection of cheat sheets, automated regex shortcuts, and documented "gotchas" to make your migration as painless as possible.
 
 ---
 
-## 📦 What's Inside
+## 📦 What's Inside?
 
-This survival kit is a curated, battle-tested collection of resources organized to guide you through every stage of migration — whether you're converting a small side project or a massive enterprise application.
+This kit is divided into practical, actionable resources:
 
-### 📋 Cheat Sheets
-
-Side-by-side reference tables so you never have to guess the CI4 equivalent again.
-
-| Cheat Sheet | Description |
-|---|---|
-| [`cheatsheets/routing.md`](cheatsheets/routing.md) | `$route['...']` → `$routes->get(...)` and beyond |
-| [`cheatsheets/models.md`](cheatsheets/models.md) | CI3 models → CI4 `CodeIgniter\Model` with entities |
-| [`cheatsheets/controllers.md`](cheatsheets/controllers.md) | Loading views, helpers, libraries — the new way |
-| [`cheatsheets/database.md`](cheatsheets/database.md) | Query Builder changes, `$this->db` → `db_connect()` |
-| [`cheatsheets/views.md`](cheatsheets/views.md) | View rendering, layouts, sections, and view cells |
-| [`cheatsheets/input-request.md`](cheatsheets/input-request.md) | `$this->input` → `$this->request` full mapping |
-| [`cheatsheets/sessions.md`](cheatsheets/sessions.md) | Session library changes and gotchas |
-| [`cheatsheets/helpers.md`](cheatsheets/helpers.md) | Which helpers survived, which were removed, what changed |
-| [`cheatsheets/config.md`](cheatsheets/config.md) | `$this->config->item()` → Config classes and `.env` |
-| [`cheatsheets/hooks-to-events.md`](cheatsheets/hooks-to-events.md) | Hooks & filters → CI4 Events and Controller Filters |
-| [`cheatsheets/libraries.md`](cheatsheets/libraries.md) | Custom library migration & service container patterns |
-| [`cheatsheets/uri-urls.md`](cheatsheets/uri-urls.md) | URL helper and URI segment changes |
-
-> 💡 **Each cheat sheet follows a consistent format:** CI3 code → CI4 equivalent → explanation → edge cases.
+*   📖 **[The Master Cheat Sheet](./CHEATSHEET.md)**: Side-by-side code comparisons for Controllers, Models, Routing, Database Query Builder, and Libraries. See exactly what your old CI3 code looks like in CI4.
+*   ⚡ **[VS Code Regex Recipes](./vscode-regex-recipes.md)**: Stop renaming files and adding namespaces manually! Use these exact "Find and Replace" regular expressions in VS Code to instantly update legacy syntax across hundreds of files.
+*   🚨 **[The "Gotchas" Guide](./GOTCHAS.md)**: The hidden traps. We document the obscure errors, deprecated functions, and configuration changes that aren't obvious until your app crashes in production.
 
 ---
 
-### 🔎 VS Code Regex Recipes
+## 🎯 How to Use This Kit
 
-Automate the tedious parts. These are **tested find-and-replace regex patterns** you can run directly in VS Code (or any editor that supports regex search) to bulk-transform common CI3 patterns.
+1.  **Read the Cheat Sheet** to understand the mental shift from CI3's magic methods to CI4's explicit service loading.
+2.  **Use the Regex Recipes** to do the heavy lifting of updating your file structures and class declarations.
+3.  **Check the Gotchas** before you deploy to catch the common pitfalls.
 
-📂 **Located in [`regex-recipes/`](regex-recipes/)**
+---
+
+## 🤝 Contributing
+
+This is an open-source project built by developers, for developers. If you have migrated a project and discovered a new "gotcha," or if you have a brilliant Regex shortcut that saves time, **please share it!**
+
+1. Fork this repository.
+2. Create your feature branch (`git checkout -b feature/amazing-regex`).
+3. Commit your changes (`git commit -m 'Add some amazing regex'`).
+4. Push to the branch (`git push origin feature/amazing-regex`).
+5. Open a Pull Request!
+
+---
+
+## 📜 License
+
+This project is open source and available under the [MIT License](./LICENSE).
+
+---
+
+*Built with ❤️ by developers who survived the CI3 to CI4 migration.*
